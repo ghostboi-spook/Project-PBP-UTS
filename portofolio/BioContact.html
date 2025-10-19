@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        html, body
+        {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        }
+
+        .text-outline
+        {
+            color: white;
+            text-shadow:
+                -2px -2px 0 #093a72d6,
+                2px -2px 0 #093a72d6,
+                -2px  2px 0 #093a72d6,
+                2px  2px 0 #093a72d6,
+                0px  2px 0 #093a72d6,
+                2px  0px 0 #093a72d6;
+        }
+
+        .custom-font
+        {
+            font-family:
+                'Trebuchet MS',
+                'Lucida Sans Unicode',
+                'Lucida Grande',
+                'Lucida Sans',
+                Arial,
+                sans-serif;
+        }
+
+        .hero-section
+        {
+            background-image: url("image/gedung A10.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+        }
+
+        .hero-overlay
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content
+        {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .game-picture
+        {
+            max-width: 80%;
+            height: auto;
+            border: solid 2px black;
+            border-radius: 5px;
+        }
+
+        .navbar
+        {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+        
+        .custom-navbar
+        {
+            border: solid 6px rgba(0, 0, 0, 0);
+            margin: 0 5px 0 5px;
+        }
+
+        .custom-navbar:hover
+        {
+            color: rgba(23, 224, 198, 0.84);
+            border-bottom: solid 3px rgba(23, 224, 198, 0.84);
+        }
+
+        .content-section
+        {
+            background-color: #6c757d;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .content-section h1
+        {
+            color: black;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-secondary text-white">
+        <div class="container-fluid">
+        <a class="navbar-brand text-white fw-bold custom-font">Fuwari Haiiro</a>
+        <div class="d-flex">
+            <a href="index.html" class="nav-link text-white custom-navbar custom-font">Home</a>
+            <a href="BioContact.html" class="nav-link text-white custom-navbar custom-font">Bio & Contact</a>
+            <a href="https://github.com/ghostboi-spook" class="nav-link text-white custom-navbar custom-font">Github</a>
+        </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="display-1 text-outline top-header" id="tittle"><b></b></h1>
+        </div>
+    </div>
+
+    <div class="container-fluid mx-0 my-0 py-0 px-0 border bg-secondary text-white fs-4">
+        <div class="row mt-3">
+            <div class="col-fluid top-header text-center" style="color:black; font-size: 50px;">
+                <h1><b>MY STORY</b></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col top-header text-center">
+                <p>I started my journey as a digital artist in 2018. For the first three years, I drew stick figures before slowly transitioning into a chibi art style over the next four years. In 2024, I joined the State University of Surabaya to study programming and computer science so I can make games and AI. So far, I’ve created a game using C++ and the Raylib library.</p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-fluid top-header text-center" style="color:black; font-size: 50px;">
+                <h1><b>MY CONTACT</b></h1>
+            </div>
+            <div class="col">
+                <a href="https://github.com/ghostboi-spook"><img src="image/github logo.png" class="d-block mx-auto img-fluid" style="width: 25%;" alt="github"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let tittleText = document.getElementById("tittle");
+        let index = 0;
+        let tittleList = "BIOGRAPHY"
+
+        function tittleAnimation() {
+            if (tittleText.textContent.length < tittleList.length) {
+                index++;
+                tittleText.textContent = tittleList.substring(0, index);
+                setTimeout(tittleAnimation, 100);
+            }
+        }
+
+        tittleAnimation();
+    </script>
+</body>
+</html>
